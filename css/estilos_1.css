@@ -1,0 +1,797 @@
+/*#cuadro_color{
+    height: 300px;
+    width: 300px;;
+    background-color: #333;
+    color: #eee;
+}/*
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+REGLAS GENERALES AL BODY Y AL DOCUMENTO
+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+:root{
+    --color_body: rgb(255 255 255 / 50%);
+    --color_error_campo: rgb(255 0 0 / .2);
+    --color_exitoso_campo: rgb(0 255 0 / .2);
+    --color_error_texto: rgb(255 0 0 / .8);
+    --color_exitoso_texto: rgb(0 255 0 / .8);
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'poppins', sans-serif;
+   /*background-image: url("../imags/wallpaper/fondo_paisaje_3.jpg");
+   background-position: center;*/
+    background-color: rgb(17 17 17);
+   /*background-image: linear-gradient(to right, #FCF977,#FCE977, #D0FC77, #98FC77, #77FC89 );*/
+    color: var(--color_body) /*rgb(255 255 255 / 50%);*/
+    
+}
+
+/* @media screen and (min-width: 1024px)
+ { */
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL NAV
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #check{
+        display: none;
+    }
+    .menu_bar{
+        /* border: 1px dashed red; */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        box-sizing: border-box;
+        border-block-end: 1px solid var(--color_body);
+        backdrop-filter: blur(5px);
+        padding: 0 10%;
+        margin: 0;
+        height: 10vh;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .container_enlaces_menubar{
+        /* border:1px solid red; */
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        height: 9.5vh;
+        width:30%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .enlaces{
+        /* border: 1px dashed yellowgreen; */
+        box-sizing: border-box;
+        position: relative;
+        font-size: 1.15rem;
+        color: var(--color_body);
+        text-decoration: none;
+        margin: 0 0.4rem;
+        padding: 2.5vh 0;
+        height: 9.5vh;
+        transition: 0.3s ease;
+    }
+    .separador{
+        border: 1px solid var(--color_body);
+        min-height: 5vh;
+        margin: 0;
+        padding: 0;
+    }
+    .enlaces:hover{
+        color: rgb(255 255 255);
+    }
+    
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL CONTENEDOR QUE CONTIENE EL LOGO Y EL FORMULARIO
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #container_form{
+        /* border: 1px solid yellow; */
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 10vh;
+        box-sizing: border-box;
+        width: 100%;
+        height: 85vh;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    #contenedor_imagen_form{
+        position: relative;
+        /* border: 1px solid blue; */
+        width: 40%;
+        height: 100%;
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .imagen_formulario{
+        /* border: 1px solid purple; */
+        width: 65%;
+        height: 70%;
+        margin: 0;
+        padding: 0;
+        opacity: 60%;
+        transition: 0.5s ease;
+    }
+    #imagen_formulario:hover{
+        opacity: 100%;
+        filter: drop-shadow(0px 0px 10px 
+                rgb(255 255 255 / 1));
+    }
+    .contenedor_form{
+        /* border: 1px solid rgb(255 255 255); */
+        box-sizing: border-box;
+        width: 59.9%;
+        height: 100%;
+        background-color: transparent;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL CONTENEDOR DEL FORMULARIO DE LOGIN
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #form_login{
+        /* border: 1px dashed red; */
+        box-sizing: border-box;
+        margin: 0;
+        padding: 2rem;
+        height: 75vh;
+        width: 30vw;
+        border-radius: 5%;
+        background-color: rgb(255 255 255 / 10%);
+        transition: 0.5s;
+    }
+    #form_login:hover{
+        box-shadow: 0px 0px 10px rgb(255 255 255);
+        background: transparent;
+        /*backdrop-filter: blur(15px);*/
+    }
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL TITULO DEL FORMULARIO DE LOGIN
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #cabecera_form_login{
+        /* border: 1px solid rgb(136, 255, 0); */
+        box-sizing: border-box;
+        width:100%;
+        margin: 0;
+        border-block-end: 1px solid var(--color_body);
+        position: relative;
+        height: 10vh;
+        margin-block-end: 1rem;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #icono_titulo_form_login{
+        /* border: 1px solid rgb(0, 183, 255); */
+        width: 13%;
+        height: 90%;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        margin-inline-start: 8%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #titulo_form_login{
+        /* border: 1px solid red; */
+        width:75%;
+        height: 9vh;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
+    .h1 h1{
+        font-size: 1.7rem;
+    }
+    #icono_titulo_login{
+        width: 80%;
+        filter: invert(53%);
+    }
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL CUERPO DE DATOS DEL FORMULARIO DE LOGIN
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #cuerpo_datos_login{
+        /* border: 1px solid yellow; */
+        box-sizing: border-box;
+        height: 38vh;
+        padding: 1px;
+        margin: 0;
+    }
+    .inputs_form{
+        /* border: 1px dashed red; */
+        margin: 0;
+        padding: 1px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 17vh;
+
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .titulos_labels{
+        /* border: 1px dashed yellowgreen; */
+        box-sizing: border-box;
+        margin: 2vh 0 2.5vh 0;
+        padding: 1px;
+        width: 100%;
+        height: 6vh;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #campo_password{
+        /* border: 1px dashed blue; */
+        width: 100%;
+        height: 90%;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .iconos_datos_usuario{
+        width: 10%;
+        filter: invert(53%);
+    }
+    .labels{
+        /* border: 1px dashed red; */
+        width: 80%;
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0 0.8rem;
+        box-sizing: border-box;
+    }
+    .inputs{
+        /* border: 1px dashed blue; */
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        /* border-block-end: 2px solid var(--color_body); */
+        background: transparent;
+        background: var(--color_body);
+        text-align: start;
+        border-radius: 10px;
+        margin: 0;
+        padding: 0.3rem;
+    }
+    .inputs:focus{
+        background-color: var(--color_body);
+        border-radius: 10px;
+        transition: 0.5s;
+        padding: 0.3rem;
+    }
+    .inputs:focus::placeholder{
+        background: transparent;
+        color: rgb(255 255 255);
+    }
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL AREA DE BOTON Y OLVIDE CONTRASEÑA DEL FORMULARIO
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    .area_login{
+        /* border: 1px dashed yellowgreen; */
+        margin: 0.5rem auto;
+        box-sizing: border-box;
+        padding: 0;
+        height: 13vh;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #boton_ingresar_login{
+        /* border: 1px dashed yellowgreen; */
+        width: 90%;
+        /* margin-block-end: 0.3rem; */
+        margin: 0.6rem auto;
+    }
+    .boton_ingresar{
+        padding: 0.5rem;
+        border-radius: 10px;
+        width: 100%;
+        border: none;
+        background-color: rgb(98 240 87 / 100%);
+
+    }
+    .boton_ingresar:hover{
+        box-shadow: 0px 0px 4px 0px rgb(104 240 0 / 94%);
+        background-color: rgb(98 240 87 / 80%);
+        transition: 0.5s;
+    }
+    .links{
+        /*border: 1px dashed yellowgreen;*/
+        color:var(--color_body);
+        text-decoration: none;
+    }
+    .links a:active{
+        color:var(--color_body);
+        text-decoration: none;
+    }
+    .links a:link {
+        color:var(--color_body);
+        text-decoration: none;
+    }
+    .links a:visited{
+        color:var(--color_body);
+        text-decoration: none;
+    }
+    .links a:hover{
+        color:var(--color_body);
+        text-decoration: underline;
+        transition: 0.5s;
+    }
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA LA VALIDACION DE LOS CAMPOS
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+    .mensajeValidacionExitoso{
+        color: greenyellow;
+        font-size: 0.8rem;
+    }
+    .mensajeValidacionError{
+        color: red;
+        font-size: 0.8rem;
+        position: relative;
+    }
+    .input_error{
+        background-color: var(--color_error_campo);
+        color: white;
+    }
+    .input_exitoso{
+        background-color: var(--color_exitoso_campo);
+    }
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL FOOTER
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #footer_login{
+        /* border: 1px solid red; */
+        box-sizing: border-box;
+        position: relative;
+        margin: 0px;
+        padding: 0px;
+        height: 20vh;
+        top:74vh;
+        margin-block-start: 1.5rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA LA SUBSECCIÓN REDES_SOCIALES DEL FOOTER
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    .footer_redes_sociales{
+        /*border: 1px dashed yellow;*/
+        box-sizing: border-box;
+        margin-inline-start: 1rem;
+        width: 25%;
+        height: 10vh;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .iconos_redes{
+        box-sizing: border-box;
+        position: relative;
+        /*border: 1px solid yellowgreen;*/
+        margin: 0;
+        padding: 0;
+    }
+    .iconos_redes a{
+        margin-inline-start: 1.3vw;
+    }
+    .iconos{
+        filter: invert(53%);
+        /*margin: 0.5rem;*/
+        width: 55%;
+        /*border: 1px solid red;*/
+        margin: 0 auto;
+    }
+
+    .footer_legales{
+        /*border: 1px dashed yellow;*/
+        box-sizing: border-box;
+        position: relative;
+        margin: 0;
+        width: 40%;
+        text-align: center;
+    }
+    #mencion_desarrollador{
+        /*border: 1px dashed yellow;*/
+        box-sizing: border-box;
+        margin: 0;
+        width: 30%;
+    }
+ /* } */
+
+/* @media screen and (min-width:768px) and (max-width:1023px)
+{
+    #contenedor_imagen_form{
+        border: 1px solid red;
+    }
+} */
+
+@media screen and (max-width:767px)
+{
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+REGLAS PARA EL MENUBAR RESPONSIVO
+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+ 
+    .separador{
+        display: none;
+    }
+    
+    #check{
+        display: none;
+    }
+    /* #menu_check{
+        border: 1px dashed red;
+        height: 4vh;
+        width: 100%;
+    } */
+    .iconos_menu_responsive{
+        /* border: 1px dashed red; */
+        filter: invert(53%);
+        width: 100%;
+        /* height: 4vh; */
+    }
+    .iconos_open_close{
+        /* border: 1px dashed red; */
+        width: 10%;
+        height: 10%;
+        margin: 0;
+        padding: 0;
+        margin-inline-start: 89%;
+        display: inline-flex;
+    }
+    #icono_cerrar_menu_resp{
+        display: none;
+    }
+    #check:checked ~ .iconos_open_close #icono_menu_responsive{
+        display: none;
+    }
+    #check:checked ~ .iconos_open_close #icono_cerrar_menu_resp{
+        display: block;
+    }
+    .menu_bar{
+        /* border: 1px dashed yellowgreen; */
+        backdrop-filter: blur(10px);
+        box-sizing: border-box;
+        position: fixed;
+        top: 8%;
+        left: 58.5vw;
+        padding:0;
+        width: 40%;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s ease;
+        z-index: 20;
+    }
+    .container_enlaces_menubar{
+        /* border: 1px solid red; */
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .enlaces{
+        /* border: 1px dashed blue; */
+        display: block;
+        margin: 0% 0%;
+        padding: 4% 0%;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1.15rem;
+        color: var(--color_body);
+        border-block-end: 2px solid var(--color_body);
+        text-decoration: none;
+        text-align: left;
+        transition: 0.5s ease;
+    }
+    .enlaces:hover{
+        color: rgb(255 255 255);
+        border-color: rgb(255 255 255);
+    }
+    #check:checked ~ .menu_bar{
+        height: 20%;
+    }
+    /* #check:checked ~ .container_enlaces_menubar{
+        height: 20vh;
+    } */
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL CONTENEDOR QUE CONTIENE EL LOGO Y EL FORMULARIO RESPONSIVO
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #container_form{
+        /* border: 1px dashed blue; */
+        /* background-color: rgb(0 0 255 / 0.2); */
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .contenedor_form{
+        /* border: 1px dashed red; */
+        /* background-color: rgb(255 0 0 / 0.2); */
+        width: 80%;
+        height: 90vh;
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: transparent; /*(255 255 255 / 10%)*/
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #contenedor_imagen_form{
+        display: none;
+    }
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL CONTENEDOR DEL FORMULARIO DE LOGIN
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #form_login{
+        /* border: 1px dashed yellowgreen; */
+        /* background-color: rgb(0 255 0 / 0.2); */
+        margin: 0 auto;
+        max-width: 60%;
+        height: 75vh;
+        box-sizing: border-box;
+        padding: 2rem;
+        border-radius: 5%;
+        background-color: rgb(255 255 255 / 10%);
+        transition: 0.5s ease;
+    }
+    #form_login:hover{
+        box-shadow: 0px 0px 10px rgb(255 255 255);
+        background: transparent;
+    }
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+REGLAS PARA EL TITULO DEL FORMULARIO DE LOGIN
+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #cabecera_form_login{
+        /* border: 1px solid red; */
+        box-sizing: border-box;
+        width:100%;
+        /* border-block-end: 1px solid var(--color_body); */
+        height: 10vh;
+        margin-block-end: 1rem;
+
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #icono_titulo_form_login{
+        /* border: 1px solid yellow; */
+        width:5vw;
+        height:5vh;
+    }
+    #icono_titulo_login{
+        width: 100%;
+        filter: invert(53%);
+    }
+    #titulo_form_login{
+        /* border: 1px solid blue; */
+        width:75%;
+        height: 90%;
+    }
+    .h1 h1{
+        font-size: 1.1rem;
+    }
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL CUERPO DE DATOS DEL FORMULARIO DE LOGIN
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    #cuerpo_datos_login{
+        /* border: 1px solid yellow; */
+        height: 35vh;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .inputs_form{
+        /* border: 1px dashed red; */
+        margin: 0 0 0.8rem 0;
+        padding: 1px;
+        width: 100%;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    #campo_password{
+        /* border: 1px dashed blue; */
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .titulos_labels{
+        /* border: 1px dashed yellowgreen; */
+        width: 80%;
+        margin: 0 0 0.7rem 0;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .iconos_datos_usuario{
+        /* border: 1px dashed yellowgreen; */
+        width: 15%;
+        filter: invert(53%);
+    }
+    .labels{
+        /* border: 1px dashed red; */
+        width: 75%;
+        margin: 0 0 0 1vw;
+        text-align: start;        
+    }
+    .inputs{
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        width: 100%;
+        margin: 0.5rem 0;
+        border-block-end: 2px solid var(--color_body);
+        background: transparent;
+        padding: 0 35px 0 5px;
+    }
+    .inputs:focus{
+        background-color: var(--color_body);
+        border-radius: 10px;
+        transition: 0.5s;
+        padding: 0.4rem;
+    }
+    .inputs::placeholder{
+        font-size: 0.9rem;
+    }
+    .inputs:focus::placeholder{
+        background: transparent;
+        color: rgb(255 255 255);
+    }
+
+    /* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+    REGLAS PARA EL AREA DE BOTON Y OLVIDE CONTRASEÑA DEL FORMULARIO
+    = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+    .area_login{
+        /* border: 1px dashed yellowgreen; */
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+        height: 14vh;
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    #boton_ingresar_login{
+        /* border: 1px dashed yellowgreen; */
+        width: 100%;
+        margin: 0;
+    }
+    .boton_ingresar{
+        /* border: 1px dashed red; */
+        padding: 0.5rem;
+        border-radius: 10px;
+        width: 100%;
+        border: none;
+        background-color: rgb(98 240 87 / 100%);
+
+    }
+    .boton_ingresar:hover{
+        box-shadow: 0px 0px 4px 0px rgb(104 240 0 / 94%);
+        background-color: rgb(98 240 87 / 80%);
+        transition: 0.5s;
+    }
+    #olvide_password{
+        /* border: 1px solid red; */
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .links{
+        /*border: 1px dashed yellowgreen;*/
+        color:var(--color_body);
+        text-decoration: none;
+        text-align: center;
+    }
+    #olvide_password a{
+        font-size: 0.8rem;
+    }
+    .links a:active{
+        color:var(--color_body);
+        text-decoration: none;
+    }
+    .links a:link {
+        color:var(--color_body);
+        text-decoration: none;
+    }
+    .links a:visited{
+        color:var(--color_body);
+        text-decoration: none;
+    }
+    .links a:hover{
+        color:var(--color_body);
+        text-decoration: underline;
+        transition: 0.5s;
+    }
+
+    #footer_login{
+        display: none;
+    }
+
+/* = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+CORCHETE FINAL DE MEDIA SCREEN (max-width:767px)
+ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+} 

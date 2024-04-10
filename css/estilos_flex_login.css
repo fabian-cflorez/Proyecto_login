@@ -1,0 +1,45 @@
+section{
+    border: 1px solid red;
+    /*
+    margin: 0.5em;
+    padding: 0.5em;
+    */
+}
+
+div{
+    border: 1px dashed blue;
+}
+
+#form_login{
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid red;
+    box-sizing: content-box;
+
+    /*Propiedades Flex*/
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#cabecera_form_login{
+    width: 90%;
+    display: flex;
+    gap: 5em;
+}
+
+#cuerpo_datos_login{
+    width: 90%;
+}
+
+#acciones_login{
+    width: 90%;
+}
+
+#password_usuario{
+    display: flex;
+}
+
+.iconos{
+    width: 2em;
+}

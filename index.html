@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Se agrega el tipo de fuente Poppins Regular 400-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+        <!--Finalizacion de la fuente-->
+        
+        <title>Login</title>
+        <link rel="stylesheet" href="css/estilos_1.css"></link>
+    </head>
+    <body>
+        <!-- <div id="menu_check" class=""> -->
+            <input type="checkbox" id="check">
+            <label for="check" class="iconos_open_close">
+                <img src="imags/icons/menu.svg" alt="icono_menu_responsive" id="icono_menu_responsive" class="iconos_menu_responsive">
+                <img src="imags/icons/close.svg" alt="icono_cerrar_menu_resp" id="icono_cerrar_menu_resp" class="iconos_menu_responsive">
+                <!--
+                <i class="icon_menu_resp" id="icon-menu"></i>
+                <i class="icon_menu_resp" id="close-menu"></i>
+                <i class="icon_menu_resp" ></i>
+                -->
+            </label>
+        <!-- </div> -->
+        
+        <nav id="" class="menu_bar">
+            <div id="container_enlaces_menubar" class="container_enlaces_menubar">
+                <span class="separador"></span>
+                <a href="#" target="_blank" rel="" class="enlaces">Inicio</a>
+                <span class="separador"></span>
+                <a href="#" target="_blank" rel="" class="enlaces">Contáctanos</a>
+                <span class="separador"></span>
+                <a href="#" target="_blank" rel="" class="enlaces">Nosotros</a>
+                <span class="separador"></span>
+            </div>
+        </nav>
+        
+        <section id="container_form">
+            <div id="contenedor_imagen_form">
+                <img id="imagen_formulario" class="imagen_formulario" src="imags/otras/logo_tm_2.svg" alt="Logo_tecla_maestra">
+            </div>
+
+            <div id="contenerdor_formulario_login" class="contenedor_form">
+                <form id="form_login" action="" method="post">
+                    <div id="cabecera_form_login">
+                        <div id="icono_titulo_form_login">
+                            <img id="icono_titulo_login" src="imags/icons/key.svg" alt="icono_titulo_form_login" srcset="">
+                        </div>
+                        
+                        <div id="titulo_form_login" class="h1">
+                            <h1>Inicio de sesión</h1>
+                        </div>
+                    </div>
+                    
+                    <div id="cuerpo_datos_login" class="">
+                        <div id="nombre_usuario" class="inputs_form">
+                            <div id="titulo_usuario" class="titulos_labels">
+                                <img src="imags/icons/user1_icon_fontawesome_128px.svg" id="icono_usuario" class="iconos_datos_usuario" alt="icono_de_usuario">
+                                <label id="label_usuario" for="usuario" class="labels">Usuario</label>
+                            </div>
+                            
+                            <input type="text" name="usuario" id="input_usuario" class="inputs" placeholder="Usuario" required minlength="4" maxlength="12" onkeyup="mayusLetra(this)">
+                        </div>
+                        
+                        <div id="password_usuario" class="inputs_form">
+                            <div id="campo_password">
+                                <div id="titulo_usuario" class="titulos_labels">
+                                    <img src="imags/icons/password_icon_material_128px.svg" id="icono_password" class="iconos_datos_usuario" alt="icono_de_password">
+                                    <label id="label_password" for="password" class="labels">Contraseña</label>
+                                </div>
+                                
+                                <input type="password" name="password" id="input_password" class="inputs" placeholder="Contraseña" minlength="4" maxlength="10" required>
+                            </div>
+                        </div>
+                        <span id="mensajeValidacion" class=""></span>
+                    </div>
+                    
+                    <div id="acciones_login" class="area_login">
+                        <div id="boton_ingresar_login">
+                            <input id="boton_ingresar" class="boton_ingresar" type="button" value="Ingresar" onclick="this.disabled=true;this.value='Enviando. . .'; verificarDatos()">
+                        </div>
+
+                        <div id="olvide_password" class="links">
+                            <a href="#" target="_blank" rel="">Olvidé mi contraseña</a>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- <div>
+                    <input type="button" value="Pokemon" class="boton_ingresar" id="btn_pokemon">
+                </div> -->
+            </div>
+        </section>
+
+        <footer id="footer_login">
+            <div id="iconos_redes_sociales" class="footer_redes_sociales">
+                <div id="icono_facebook" class="iconos_redes">
+                    <a href="https://facebook.com/fabianalexander.carrascoflorez" target="_blank" rel=""><img src="imags/icons_redes_sociales/facebook_icon_bootstrap_128px.svg" alt="icono_facebook" class="iconos" id="icono_facebook"></a>
+                </div>
+
+                <div id="icono_youtube" class="iconos_redes">
+                    <a href="#" target="_blank" rel=""><img src="imags/icons_redes_sociales/youtube_icon_bootstrap_128px.svg" alt="icono_youtube" class="iconos" id="icono_youtube"></a>
+                </div>
+
+                <div id="icono_instagram" class="iconos_redes">
+                    <a href="#" target="_blank" rel=""><img src="imags/icons_redes_sociales/instagram_icon_bootstrap_128px.svg" alt="icono_instagram" class="iconos" id="icono_instagram"></a>
+                </div>
+
+                <div id="icono_tiktok" class="iconos_redes">
+                    <a href="#" target="_blank" rel=""><img src="imags/icons_redes_sociales/tiktok_icon_fontawesome_128px.svg" alt="icono_tiktok" class="iconos" id="icono_tiktok"></a>
+                </div>
+            </div>
+
+            <div id="terminos_legales" class="footer_legales">
+                <div>
+                    <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, laboriosam consequatur officiis, quia excepturi aut commodi harum enim ad blanditiis quae tempora quidem consequuntur odit aliquam dolorum vero at velit!
+                    </p>
+                </div>
+            </div>
+
+            <div id="mencion_desarrollador">
+                <p>
+                    Desarrollado por Fabian Carrasco Florez de <a href="#" target="_blank" rel="noopener noreferrer" class="links">TECLA MAESTRA</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="js/js_main.js"></script>
+        <script src="js/sweetalert2_11.js"></script>
+    </body>
+</html>
